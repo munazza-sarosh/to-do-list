@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <style>
+        .fieldss {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .fields {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 300px;
+            background-color: rgb(180, 202, 202);
+            margin-top: 100px;
+            border-radius: 30px;
+        }
+        input{
+            border-radius: 10px;
+            text-decoration: none;
+            border: none;
+        }
+        button{
+            border-radius: 10px;
+            border: none;
+            text-decoration: none;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="fieldss">
+        <div class="fields">
+            <input type="text" id="todotext" name="todotext" placeholder="Add an item">
+            <br />
+            <button id="done" type="click"> add me</button>
+            <p id="demo"></p>
+        </div>
+        <div class="fields">
+            <input type="text" id="todo-2" name="todo-2" placeholder="Enter a task">
+            <br>
+            <button id="click" type="click">add me</button>
+            <p id="task"></p>
+        </div>
+        <div class="fields">
+            <input type="text" id="todo-3" name="todo-3" placeholder="Enter a task">
+            <br>
+            <button id="click3" type="click">add me</button>
+            <p id="task3"></p>
+        </div>
+        <div class="fields">
+            <input type="text" id="todo-4" name="todo-4" placeholder="Enter a task">
+            <br>
+            <button id="click4" type="click">add me</button>
+            <p id="task4"></p>
+        </div>
+    </div>
+    <script>
+        // first to do list
+        let btn = document.getElementById("done")
+        btn.addEventListener('click', doit)
+        let display = document.getElementById("demo")
+        let ul = document.createElement('ul')
+        function doit() {
+            let addtask = document.getElementById("todotext")
+            let valueofinput = addtask.value
+            let input = document.createElement('input')
+            input.type = "checkbox"
+            let li = document.createElement('li')
+            li.appendChild(input);
+            li.appendChild(document.createTextNode(" " + valueofinput));
+            ul.appendChild(li)
+            addtask.value = " "
+
+        }
+        demo.appendChild(ul)
+        document.body.appendChild(demo)
+
+        // second to do list
+
+        let btn2 = document.getElementById("click")
+        btn2.addEventListener('click', donow)
+        let ul2 = document.createElement('ul')
+        let output = document.getElementById("task")
+        function donow() {
+            let task = document.getElementById("todo-2")
+            let value_ = task.value;
+            let input = document.createElement('input')
+            input.type = 'checkbox'
+            let li = document.createElement('li')
+            li.appendChild(input)
+            li.appendChild(document.createTextNode(" " + value_));
+            ul2.appendChild(li)
+            task.value = ""
+        }
+        task.appendChild(ul2)
+        document.body.appendChild(task)
+
+        // third todolist
+
+        let btn3 = document.getElementById("click3")
+        btn3.addEventListener('click', doagain)
+        let ul3 = document.createElement("ul")
+        let display3 = document.getElementById("task3")
+        function doagain() {
+            let task = document.getElementById("todo-3")
+            let value = task.value;
+            let input = document.createElement('input')
+            input.type = 'checkbox'
+            let li = document.createElement("li")
+            li.appendChild(input)
+            li.appendChild(document.createTextNode(" " + value));
+            ul3.appendChild(li)
+            task3.value = ""
+        }
+        task3.appendChild(ul3)
+        document.body.appendChild(task3)
+
+        // fourth
+
+        let btn4 = document.getElementById("click4")
+        btn4.addEventListener('click', doagain4)
+        let ul4 = document.createElement("ul")
+        let display4 = document.getElementById("task4")
+        function doagain4() {
+            let task = document.getElementById("todo-4")
+            let value = task.value;
+            let input = document.createElement("input")
+            input.type = ("checkbox")
+            let li = document.createElement("li")
+            li.appendChild(input)
+            li.appendChild(document.createTextNode(" " + value))
+            ul4.appendChild(li)
+            task4.value = ""
+        }
+        task4.appendChild(ul4)
+        document.body.appendChild(task4)
+    </script>
+</body>
+
+</html>
