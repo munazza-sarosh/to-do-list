@@ -21,9 +21,14 @@
                 display.innerHTML = addtask.value;
                 let input = document.createElement("input")
                 input.type = "checkbox"
+                let edit = document.createElement("button")
+                let delete_ = document.createElement("button")
+
                 let li = document.createElement("li")
                 li.appendChild(input)
                 // li.appendChild(display)
+                li.appendChild(edit)
+                li.appendChild(delete_)
                 li.appendChild(document.createTextNode(" " + display))
                 ul.appendChild(li)
                 addtask.value = ""
