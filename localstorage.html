@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="todotext" name="todotext" placeholder="enter task">
+    <span id="demo"></span>
+
+
+    <script>
+        let array_ = [];
+        let item = localStorage.setItem("itemstorage",JSON.stringify(array_))
+
+
+        let addtask = document.getElementById("todotext")
+        let ul = document.createElement("ul")
+        addtask.addEventListener("keydown", add)
+        function add(event) {
+
+            if (event.key === "Enter") {
+                console.log(addtask.value)
+                let texttask = addtask.value;
+                localStorage.setItem("itemstorage",JSON.stringify(texttask))
+            }
+
+        }
+    </script>
+</body>
+
+</html>
