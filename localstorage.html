@@ -11,25 +11,82 @@
 
     <input type="text" id="todotext" name="todotext" placeholder="enter task">
     <span id="demo"></span>
-
-
+    <input type="text" id="text" name="todotext" placeholder="enter task">
+    <span id="demo"></span>
     <script>
-        let array_ = [];
-        let item = localStorage.setItem("itemstorage",JSON.stringify(array_))
+        // let array_ = [];
+        // let item = localStorage.setItem("itemstorage",JSON.stringify(array_))
 
+        // let addtask = document.getElementById("todotext")
+        // let ul = document.createElement("ul")
+        // addtask.addEventListener("keydown", add)
+        // function add(event) {
 
-        let addtask = document.getElementById("todotext")
+        //     if (event.key === "Enter") {
+        //         console.log(addtask.value)
+        //         let texttask = addtask.value;
+        //         localStorage.setItem("itemstorage",JSON.stringify(texttask))
+        //     }
+        // }
+        // let array2 = []
+        // let items = localStorage.setItem("storage2", JSON.stringify(array2))
+        // let task_ = document.getElementById("todotext")
+        // task_.addEventListener("keydown", task)
+        // function task(event) {
+        //     if (event.keyCode === 13) {
+        //         console.log(task_)
+        //         let text2 = task_.value;
+        //         localStorage.setItem("storage2", JSON.stringify(text2))
+        //     }
+        // }
+        // let array = []
+        // let storage_ = JSON.parse(localStorage.getItem('tasklist')) || [];
+        // let task3 = document.getElementById("todotext")
+        // task3.addEventListener("keydown", task)
+        // function task(event) {
+        //     if (event.key === "Enter") {
+        //         storage_ = JSON.parse(localStorage.getItem('tasklist')) || [];
+        //         console.log(task3)
+        //         let textt = task3.value;
+        //         storage_.push(textt)
+        //         localStorage.setItem("tasklist", JSON.stringify(storage_))
+        //     }
+        // }
         let ul = document.createElement("ul")
-        addtask.addEventListener("keydown", add)
-        function add(event) {
+        let Storage_ = JSON.parse(localStorage.getItem("list")) || [];
+        Storage_.forEach(store => {
+            let li = document.createElement("li")
+            li.innerHTML = store;
+            ul.appendChild(li)
+        })
 
-            if (event.key === "Enter") {
-                console.log(addtask.value)
-                let texttask = addtask.value;
-                localStorage.setItem("itemstorage",JSON.stringify(texttask))
+        Storage_ = JSON.parse(localStorage.getItem('list')) || [];
+        let task1 = document.getElementById("text")
+        task1.addEventListener("keydown", tasktodo)
+        function tasktodo(event) {
+            if (event.keyCode === 13) {
+                Storage_ = JSON.parse(localStorage.getItem('list')) || [];
+                console.log(task1)
+                let texttt = task1.value;
+                Storage_.push(texttt)
+                localStorage.setItem("list", JSON.stringify(Storage_))
+                let li = document.createElement("li");
+                li.innerHTML = texttt;
+                ul.appendChild(li);
+
+                task1.value = "";
             }
-
         }
+        document.body.appendChild(ul)
+        // let ul = document.createElement("ul")
+        // let days = ["saturday", "sunday", "monday", "tuesday"]
+        // days.forEach(day => {
+        //     let li = document.createElement("li")
+        //     li.innerHTML = day;
+        //     ul.appendChild(li)
+        // });
+        // document.body.appendChild(ul)
+
     </script>
 </body>
 
